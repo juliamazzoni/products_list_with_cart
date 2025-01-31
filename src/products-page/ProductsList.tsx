@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react"
 import { StyledProductsListContainer, StyledProductsList, StyledItem, StyledImage, StyledText, StyledButton } from "./style"
+import { ReactSVG } from "react-svg"
 
 type Image = {
   desktop: string,
@@ -70,19 +71,17 @@ export const ProductsList = () => {
           {!product.count ?
           
             <StyledButton variant="primary" onClick={() => handleAddItem(product)}>
-              <img src="assets/images/icon-add-to-cart.svg" alt="" width='25px'/>
+              <img  src="assets/images/icon-add-to-cart.svg" alt="icon-add-to-cart"/>
               Add to Cart
             </StyledButton>
           
             :
 
             <StyledButton variant="secondary">
-              <img onClick={() => handleRemoveItems(product)} src="assets/images/icon-decrement-quantity.svg" alt="" width='15px' height='15px'/>
+              <ReactSVG  fill='currentColor' onClick={() => handleRemoveItems(product)} src="assets/images/icon-decrement-quantity.svg" />
               {product.count}
-              <img onClick={() => handleAddItem(product)} src="assets/images/icon-increment-quantity.svg" alt="" width='15px' height='15px'/>
-
+              <ReactSVG fill='currentColor' onClick={() => handleAddItem(product)} src="assets/images/icon-increment-quantity.svg" />
             </StyledButton>
-
           }
 
 

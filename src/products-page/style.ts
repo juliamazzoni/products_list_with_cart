@@ -49,7 +49,6 @@ export const StyledText = styled.div`
   h2 {
     margin: 8px 0;
     font-size: 16px;
- 
   }
 
   h2:nth-of-type(2) {
@@ -83,10 +82,19 @@ export const StyledButton = styled.button<StyledButtonProps>`
   }
   };
 
-  img {
-    border-radius: 50%;
-    padding: 5px;
-    border: 1px solid #fff;
-  }
-  
+    svg {
+      border-radius: 50%;
+      height: 10px;
+      width: 10px;
+      border: 1px solid #fff;
+      padding: 2px;    
+    }
+
+    svg:active {
+      background-color: #fff;
+      path {
+        fill: hsl(14, 86%, 42%);
+      }
+    }
+
 `
