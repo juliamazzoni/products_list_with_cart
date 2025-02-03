@@ -19,6 +19,9 @@ export const  StyledProductsListContainer = styled.div`
   gap: 20px
 `
 
+export const StyledTitle = styled.h1`
+ font-size: 40px;
+`
 export const StyledProductsList = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

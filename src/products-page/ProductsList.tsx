@@ -1,22 +1,10 @@
 
-import { useEffect, useState } from "react"
-import { StyledProductsListContainer, StyledProductsList, StyledItem, StyledImage, StyledText, StyledButton } from "./style"
-import { ReactSVG } from "react-svg"
+import React, { useEffect, useState } from "react"
+import { StyledProductsListContainer, StyledTitle, StyledProductsList, StyledItem, StyledImage, StyledText } from "./style"
+import { PrimaryButton } from "./PrimaryButton"
+import { SecondaryButton } from "./SecondaryButton"
+import { Product } from "./types/types"
 
-type Image = {
-  desktop: string,
-  mobile: string,
-  tablet: string,
-  thumbnail: string
-}
-
-interface Product {
-  category: string, 
-  image: Image,
-  name: string, 
-  price: number,
-  count?: number
-}
 
 export const ProductsList = () => {
   const [productsList, setProductsList] = useState<Product[]>([])
@@ -30,9 +18,9 @@ export const ProductsList = () => {
     fetchData()
   },[])
 
-  const handleAddItem = (product: Product) => {
+  const handleAddItem = (productName: string) => {
     const updatedProductsList = productsList.map(item => {
-      if (item.name === product.name){
+      if (item.name === productName){
         if(!item.count){
           return {...item, count: 1}
         }else{
@@ -57,11 +45,14 @@ export const ProductsList = () => {
   })
 
   return (
+
     <StyledProductsListContainer>
-      <h1>Desserts</h1>
+      <StyledTitle>
+        Desserts
+      </StyledTitle>
+
       <StyledProductsList>
       {productsList.map((product: Product, index: number) => {
-
         return (
         <StyledItem key={index}>
           <StyledImage>
@@ -69,21 +60,10 @@ export const ProductsList = () => {
           </StyledImage>
 
           {!product.count ?
-          
-            <StyledButton variant="primary" onClick={() => handleAddItem(product)}>
-              <img  src="assets/images/icon-add-to-cart.svg" alt="icon-add-to-cart"/>
-              Add to Cart
-            </StyledButton>
-          
+            <PrimaryButton handleAddItem={handleAddItem} item={product.name}/>
             :
-
-            <StyledButton variant="secondary">
-              <ReactSVG  fill='currentColor' onClick={() => handleRemoveItems(product)} src="assets/images/icon-decrement-quantity.svg" />
-              {product.count}
-              <ReactSVG fill='currentColor' onClick={() => handleAddItem(product)} src="assets/images/icon-increment-quantity.svg" />
-            </StyledButton>
+            <SecondaryButton handleRemoveItems={handleRemoveItems} handleAddItem={handleAddItem} item={product} />             
           }
-
 
           <StyledText>
             <h3>{product.category}</h3>
