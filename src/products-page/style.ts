@@ -10,17 +10,16 @@ export const StyledProductsPage = styled.div`
   margin: 50px 100px;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 20px;
-  border: 1px solid red;  
+  gap: 40px;
 `
 
 export const  StyledProductsListContainer = styled.div`
-  border: 1px solid red;  
   gap: 20px
 `
 
 export const StyledTitle = styled.h1`
  font-size: 40px;
+ margin: 30px 0;
 `
 export const StyledProductsList = styled.div`
   display: grid;
@@ -55,7 +54,7 @@ export const StyledText = styled.div`
   }
 
   h2:nth-of-type(2) {
-    color: red;
+    color: hsl(14, 86%, 42%);
   }
 `
 
@@ -100,4 +99,31 @@ export const StyledButton = styled.button<StyledButtonProps>`
       }
     }
 
+`
+
+export const StyledRedText = styled.h1`
+    color: hsl(14, 86%, 42%);
+    font-size: 30px;
+    margin: 0;
+`
+
+export const StyledEmptyCart = styled.div`
+    background-color: #fff;
+    align-self: flex-start;
+    padding: 40px;
+    border-radius: 30px;
+
+    div {
+      text-align: center; 
+
+    img {
+      width: 45%;
+      padding: 30px;
+    }
+
+    h4 {
+      color: hsl(12, 20%, 44%);
+      margin: 0;
+    }
+    }
 `

@@ -1,5 +1,6 @@
 import { StyledProductsPage } from "./style"
 import { ProductsList } from "./ProductsList"
+import { EmptyCart } from "./EmptyCart"
 import { useState, useEffect } from 'react'
 import { Product } from "./types/types"
 
@@ -26,8 +27,8 @@ export const ProductsPage = () => {
      <ProductsList setProductsList={setProductsList} productsList={productsList}/>
 
      {totalCount === 0 ?
-     
-     <h1>Empty cart</h1>
+
+     <EmptyCart />
      :
      <h1>Full cart</h1>
      }
