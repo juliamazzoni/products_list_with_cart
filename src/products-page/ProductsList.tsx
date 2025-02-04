@@ -1,22 +1,11 @@
 
-import React, { useEffect, useState } from "react"
 import { StyledProductsListContainer, StyledTitle, StyledProductsList, StyledItem, StyledImage, StyledText } from "./style"
 import { PrimaryButton } from "./PrimaryButton"
 import { SecondaryButton } from "./SecondaryButton"
-import { Product } from "./types/types"
+import { Product, ProductsListProps } from "./types/types"
 
 
-export const ProductsList = () => {
-  const [productsList, setProductsList] = useState<Product[]>([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch('/data.json')
-      const data = await res.json()
-      setProductsList(data)
-    }
-    fetchData()
-  },[])
+export const ProductsList = ( {setProductsList, productsList}: ProductsListProps ) => {
 
   const handleAddItem = (productName: string) => {
     const updatedProductsList = productsList.map(item => {
@@ -59,10 +48,10 @@ export const ProductsList = () => {
             <img src={product.image.desktop} alt="" />
           </StyledImage>
 
-          {!product.count ?
-            <PrimaryButton handleAddItem={handleAddItem} item={product.name}/>
+          {product.count === 0 ?
+            <PrimaryButton handleAddItem={handleAddItem} productName={product.name}/>
             :
-            <SecondaryButton handleRemoveItems={handleRemoveItems} handleAddItem={handleAddItem} item={product} />             
+            <SecondaryButton handleRemoveItems={handleRemoveItems} handleAddItem={handleAddItem} product={product} />             
           }
 
           <StyledText>

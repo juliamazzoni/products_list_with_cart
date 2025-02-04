@@ -14,12 +14,17 @@ export interface Product {
 }
 
 export interface PrimaryButtonProps {
-  handleAddItem: (item: string) => void;
-  item: string;
+  handleAddItem: (productName: string) => void;
+  productName: string;
 }
 
 export interface SecondaryButtonProps {
-  handleRemoveItems: (item: Product) => void;
+  handleRemoveItems: (product: Product) => void;
   handleAddItem: (item: string) => void;
-  item: Product;
+  product: Product;
+}
+
+export interface ProductsListProps {
+  setProductsList: (ProductsList: Product[]) => void,
+  productsList: Product[]
 }
