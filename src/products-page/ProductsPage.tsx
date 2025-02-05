@@ -1,6 +1,7 @@
 import { StyledProductsPage } from "./style"
 import { ProductsList } from "./ProductsList"
 import { EmptyCart } from "./EmptyCart"
+import { CartContainer } from "./CartContainer"
 import { useState, useEffect } from 'react'
 import { Product } from "./types/types"
 
@@ -24,15 +25,14 @@ export const ProductsPage = () => {
 
   return (
     <StyledProductsPage>
-     <ProductsList setProductsList={setProductsList} productsList={productsList}/>
-
-     {totalCount === 0 ?
-
-     <EmptyCart />
-     :
-     <h1>Full cart</h1>
-     }
-     
+      <ProductsList setProductsList={setProductsList} productsList={productsList}/>
+      <CartContainer totalCount={totalCount} >
+        {totalCount === 0 ?
+        <EmptyCart />
+        :
+        <h1>Full cart</h1>
+        }
+      </CartContainer>
     </StyledProductsPage>
  
   )

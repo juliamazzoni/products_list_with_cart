@@ -98,7 +98,6 @@ export const StyledButton = styled.button<StyledButtonProps>`
         fill: hsl(14, 86%, 42%);
       }
     }
-
 `
 
 export const StyledRedText = styled.h1`
@@ -107,14 +106,15 @@ export const StyledRedText = styled.h1`
     margin: 0;
 `
 
-export const StyledEmptyCart = styled.div`
+export const StyledCartContainer = styled.div`
     background-color: #fff;
     align-self: flex-start;
     padding: 40px;
     border-radius: 30px;
+`
 
-    div {
-      text-align: center; 
+export const StyledEmptyCart = styled.div`
+    text-align: center; 
 
     img {
       width: 45%;
@@ -124,6 +124,5 @@ export const StyledEmptyCart = styled.div`
     h4 {
       color: hsl(12, 20%, 44%);
       margin: 0;
-    }
     }
 `

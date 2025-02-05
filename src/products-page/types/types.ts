@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 type Image = {
   desktop: string,
   mobile: string,
@@ -27,4 +29,9 @@ export interface SecondaryButtonProps {
 export interface ProductsListProps {
   setProductsList: (ProductsList: Product[]) => void,
   productsList: Product[]
+}
+
+export interface CartContainerProps {
+  children: ReactNode,
+  totalCount: number
 }
