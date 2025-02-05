@@ -126,3 +126,34 @@ export const StyledEmptyCart = styled.div`
       margin: 0;
     }
 `
+
+export const StyledCartItem = styled.div`
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid hsl(13, 31%, 94%);
+    padding: 10px 0;
+
+    img {
+      border: 2px solid hsl(14, 25%, 72%);
+      border-radius: 50%;
+      padding: 2px;
+    }
+`
+
+export const StyledPriceInfo = styled.div`
+    display: flex;
+    gap: 15px;
+
+    h3 {
+      color: hsl(14, 25%, 72%);
+    }
+
+    h3:nth-of-type(1) {
+      color: hsl(14, 86%, 42%);
+    }
+
+    h3:nth-of-type(2) {
+      font-weight: normal;
+    }
+`

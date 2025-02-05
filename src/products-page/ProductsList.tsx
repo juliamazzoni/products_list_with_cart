@@ -4,17 +4,12 @@ import { PrimaryButton } from "./PrimaryButton"
 import { SecondaryButton } from "./SecondaryButton"
 import { Product, ProductsListProps } from "./types/types"
 
-
 export const ProductsList = ( {setProductsList, productsList}: ProductsListProps ) => {
 
   const handleAddItem = (productName: string) => {
     const updatedProductsList = productsList.map(item => {
       if (item.name === productName){
-        if(!item.count){
-          return {...item, count: 1}
-        }else{
-          return {...item, count: item.count + 1}
-        }
+        return {...item, count: (item.count ?? 0) + 1}
       }
       return item
     })

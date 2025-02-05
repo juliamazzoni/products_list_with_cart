@@ -35,3 +35,7 @@ export interface CartContainerProps {
   children: ReactNode,
   totalCount: number
 }
+
+export interface FullCartProps {
+  productsList: Product[];
+}

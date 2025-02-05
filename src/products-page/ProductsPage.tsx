@@ -2,6 +2,7 @@ import { StyledProductsPage } from "./style"
 import { ProductsList } from "./ProductsList"
 import { EmptyCart } from "./EmptyCart"
 import { CartContainer } from "./CartContainer"
+import { FullCart } from "./FullCart"
 import { useState, useEffect } from 'react'
 import { Product } from "./types/types"
 
@@ -30,7 +31,7 @@ export const ProductsPage = () => {
         {totalCount === 0 ?
         <EmptyCart />
         :
-        <h1>Full cart</h1>
+        <FullCart productsList={productsList} />
         }
       </CartContainer>
     </StyledProductsPage>
