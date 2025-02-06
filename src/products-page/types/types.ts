@@ -39,5 +39,8 @@ export interface CartContainerProps {
 }
 
 export interface FullCartProps {
-  cart: Product[]
+  cart: Product[],
+  setCart: (cart: Product[]) => void,
+  setProductsList: (ProductsList: Product[]) => void,
+  productsList: Product[]
 }

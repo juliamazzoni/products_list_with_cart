@@ -13,10 +13,6 @@ export const ProductsPage = () => {
 
   const totalCount: number = productsList.reduce((sum, item: Product) => sum + (item.count ?? 0), 0)
 
-  // useEffect(() => {
-
-  // }, [productsList])
-
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch('/data.json')
@@ -36,7 +32,7 @@ export const ProductsPage = () => {
         {totalCount === 0 ?
         <EmptyCart />
         :
-        <FullCart cart={cart} />
+        <FullCart setCart={setCart} cart={cart} setProductsList={setProductsList} productsList={productsList} />
         }
       </CartContainer>
     </StyledProductsPage>

@@ -157,3 +157,45 @@ export const StyledPriceInfo = styled.div`
       font-weight: normal;
     }
 `
+
+export const StyledOrderTotal = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+      font-weight: normal;
+    }
+    `
+
+export const StyledCarbonNeutralMessage = styled.div`
+    background-color: hsl(13, 31%, 94%);
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+    
+    h3 {
+      font-weight: normal;
+    }
+
+    span {
+      font-weight: bold;
+    }
+`
+
+export const StyledConfirmButton = styled.button`
+    margin-top: 35px;
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid hsl(14, 25%, 72%);
+    background-color: hsl(14, 86%, 42%);
+    color: #fff;
+
+    h3 {
+      font-size: 20px;
+    }
+
+`
