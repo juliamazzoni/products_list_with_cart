@@ -1,19 +1,17 @@
 import { FullCartProps } from "./types/types"
 import { StyledCartItem, StyledPriceInfo } from "./style"
 
-
-export const FullCart = ({ productsList }: FullCartProps) => {
+export const FullCart = ({ cart }: FullCartProps) => {
 
   // const totalCost: number = productsList.reduce((sum, item: Product) => sum + ((item.count ?? 0) * item.price), 0)
 
   return (
     <div>
-       {productsList.filter(item => item.count ?? 0 > 0)
-       .map((item, index) => {
-        const name = item.name
-        const count = item.count ?? 0
-        const price = (item.price).toFixed(2)
-        const total = (count * item.price).toFixed(2)
+       {cart.map((cartItem, index) => {
+        const name = cartItem.name
+        const count = cartItem.count ?? 0
+        const price = (cartItem.price).toFixed(2)
+        const total = (count * cartItem.price).toFixed(2)
 
         return (
           <StyledCartItem key={index}>

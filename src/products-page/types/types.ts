@@ -28,6 +28,8 @@ export interface SecondaryButtonProps {
 
 export interface ProductsListProps {
   setProductsList: (ProductsList: Product[]) => void,
+  setCart: (ProductsList: Product[]) => void,
+  cart: Product[],
   productsList: Product[]
 }
 
@@ -37,5 +39,5 @@ export interface CartContainerProps {
 }
 
 export interface FullCartProps {
-  productsList: Product[];
+  cart: Product[]
 }

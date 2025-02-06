@@ -4,11 +4,24 @@ import { PrimaryButton } from "./PrimaryButton"
 import { SecondaryButton } from "./SecondaryButton"
 import { Product, ProductsListProps } from "./types/types"
 
-export const ProductsList = ( {setProductsList, productsList}: ProductsListProps ) => {
+export const ProductsList = ( {setProductsList, setCart, cart, productsList}: ProductsListProps ) => {
 
   const handleAddItem = (productName: string) => {
     const updatedProductsList = productsList.map(item => {
       if (item.name === productName){
+        const itemInCart = cart.some(cartItem => cartItem.name === productName)
+        if(itemInCart){
+          const updatedCart = cart.map(cartItem => {
+            if(cartItem.name === productName){
+              return {...item, count: (item.count ?? 0) + 1 }
+            }
+            return cartItem
+          })
+          setCart(updatedCart)
+        }else{
+          setCart([...cart, {...item, count: (item.count ?? 0) + 1}])
+        }
+        
         return {...item, count: (item.count ?? 0) + 1}
       }
       return item
@@ -16,17 +29,27 @@ export const ProductsList = ( {setProductsList, productsList}: ProductsListProps
     setProductsList(updatedProductsList)
   }
 
+  
   const handleRemoveItems = ((product: Product) => {
     const updatedProductsList = productsList.map(item => {
       if (item.name === product.name){
         if(item.count){
+          const updatedCart = cart.map(cartItem => {
+            if(cartItem.name === product.name){
+              return {...cartItem, count: (cartItem.count ?? 0) - 1}
+            }
+            return cartItem
+          })
+          setCart(updatedCart)
           return {...item, count: item.count - 1}
         }
       }
       return item
     })
+    
     setProductsList(updatedProductsList)
   })
+
 
   return (
 

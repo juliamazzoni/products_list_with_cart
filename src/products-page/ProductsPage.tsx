@@ -9,8 +9,13 @@ import { Product } from "./types/types"
 export const ProductsPage = () => {
 
   const [productsList, setProductsList] = useState<Product[]>([])
+  const [cart, setCart] = useState<Product[]>([])
 
   const totalCount: number = productsList.reduce((sum, item: Product) => sum + (item.count ?? 0), 0)
+
+  // useEffect(() => {
+
+  // }, [productsList])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,12 +31,12 @@ export const ProductsPage = () => {
 
   return (
     <StyledProductsPage>
-      <ProductsList setProductsList={setProductsList} productsList={productsList}/>
+      <ProductsList setCart={setCart} cart={cart} setProductsList={setProductsList} productsList={productsList}/>
       <CartContainer totalCount={totalCount} >
         {totalCount === 0 ?
         <EmptyCart />
         :
-        <FullCart productsList={productsList} />
+        <FullCart cart={cart} />
         }
       </CartContainer>
     </StyledProductsPage>
