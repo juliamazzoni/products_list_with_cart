@@ -44,3 +44,11 @@ export interface FullCartProps {
   setProductsList: (ProductsList: Product[]) => void,
   productsList: Product[]
 }
+
+export interface ConfirmationModalProps {
+  cart: Product[],
+  setProductsList: (ProductsList: Product[]) => void,
+  setCart: (ProductsList: Product[]) => void,
+  setIsModalOpen: (isOpen: boolean) => void;
+  productsList: Product[]
+}

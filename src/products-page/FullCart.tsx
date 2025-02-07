@@ -1,8 +1,11 @@
 import { FullCartProps, Product } from "./types/types"
-import { StyledCartItem, StyledPriceInfo, StyledOrderTotal, StyledCarbonNeutralMessage, StyledConfirmButton } from "./style"
+import { StyledCartItem, StyledPriceInfo, StyledOrderTotal, StyledCarbonNeutralMessage, StyledRedButton } from "./style"
+import { ConfirmationModal } from "../confirmation-modal/ConfirmationModal"
+import { useState } from "react"
 
 
 export const FullCart = ({ cart, setCart, setProductsList, productsList }: FullCartProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const totalCost: number = cart.reduce((sum, item: Product) => sum + ((item.count ?? 0) * item.price), 0)
 
@@ -23,6 +26,10 @@ export const FullCart = ({ cart, setCart, setProductsList, productsList }: FullC
 
     setProductsList(updatedProductsList)
     setCart(updatedCart)
+  }
+
+  const handleConfirmOrder = () => {
+    setIsModalOpen(true)
   }
 
   return (
@@ -57,9 +64,11 @@ export const FullCart = ({ cart, setCart, setProductsList, productsList }: FullC
           <img src="assets/images/icon-carbon-neutral.svg" alt="" width='30px' />
           <h3>This is a <span>carbon-neutral</span> delivery</h3>
        </StyledCarbonNeutralMessage>
-       <StyledConfirmButton>
+       <StyledRedButton onClick={handleConfirmOrder}>
         <h3>Confirm Order</h3>
-       </StyledConfirmButton>
+       </StyledRedButton>
+
+       {isModalOpen && <ConfirmationModal setIsModalOpen={setIsModalOpen} setCart={setCart} setProductsList={setProductsList} productsList={productsList} cart={cart} />}
     </div>
   )
 }

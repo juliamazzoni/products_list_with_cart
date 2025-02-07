@@ -186,7 +186,7 @@ export const StyledCarbonNeutralMessage = styled.div`
     }
 `
 
-export const StyledConfirmButton = styled.button`
+export const StyledRedButton = styled.button`
     margin-top: 35px;
     width: 100%;
     border-radius: 50px;
