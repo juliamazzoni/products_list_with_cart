@@ -3,6 +3,7 @@ import { ReactSVG } from "react-svg"
 import { SecondaryButtonProps } from "./types/types";
 
 export const SecondaryButton = ({ handleRemoveItems, handleAddItem,  product }: SecondaryButtonProps) => {
+  
   return (
     <StyledButton variant="secondary">
       <ReactSVG onClick={() => handleRemoveItems(product)} src="assets/images/icon-decrement-quantity.svg" />

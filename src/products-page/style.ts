@@ -1,7 +1,7 @@
 
 import styled from "styled-components"
 
-interface StyledButtonProps {
+interface variantProps {
   variant: 'primary' | 'secondary';
 }
 
@@ -32,16 +32,18 @@ export const StyledItem = styled.div`
   gap: 10px;
 `
 
-export const StyledImage = styled.div`
-
+export const StyledImage = styled.div<variantProps>`
 img {
   border-radius: 20px;
   width: 100%;
+  border: ${({ variant }) => {
+    if (variant === 'primary') return '2px solid #fff';
+    if (variant === 'secondary') return '2px solid hsl(14, 86%, 42%)'
+  }
 }
 `
 
 export const StyledText = styled.div`
-
   h3 {
     color: darkgray;
     margin: 8px 0;
@@ -58,7 +60,7 @@ export const StyledText = styled.div`
   }
 `
 
-export const StyledButton = styled.button<StyledButtonProps>`
+export const StyledButton = styled.button<variantProps>`
   display: flex;
   align-items: center;
   justify-content: ${({ variant }) => {
@@ -97,6 +99,21 @@ export const StyledButton = styled.button<StyledButtonProps>`
       path {
         fill: hsl(14, 86%, 42%);
       }
+      cursor: pointer;
+    }    
+
+    svg:hover {
+      cursor: pointer;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      cursor: pointer;
+      color: hsl(14, 86%, 42%);
+      border-color: hsl(14, 86%, 42%);
     }
 `
 
@@ -196,6 +213,15 @@ export const StyledRedButton = styled.button`
 
     h3 {
       font-size: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      cursor: pointer;
+      background-color: rgb(158 49 16);
     }
 
 `
