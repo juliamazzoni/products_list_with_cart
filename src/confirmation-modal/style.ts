@@ -43,6 +43,12 @@ export const StyledCart = styled.div`
   border-radius: 10px;
   padding: 20px;
   width: 600px;
+  max-height: 500px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 export const StyledItemDescription = styled.div`

@@ -62,9 +62,9 @@ export const ProductsList = ( {setProductsList, setCart, cart, productsList}: Pr
               <img src={product.image.desktop} alt="" />
             </StyledImage>
             {product.count === 0 ?
-              <PrimaryButton handleAddItem={handleAddItem} productName={product.name}/>
+              <PrimaryButton variant={variant} handleAddItem={handleAddItem} productName={product.name}/>
               :
-              <SecondaryButton handleRemoveItems={handleRemoveItems} handleAddItem={handleAddItem} product={product} />             
+              <SecondaryButton variant={variant} handleRemoveItems={handleRemoveItems} handleAddItem={handleAddItem} product={product} />             
             }
             <StyledText>
               <h3>{product.category}</h3>
