@@ -19,6 +19,13 @@ export const StyledModal = styled.div`
   border-radius: 15px;
   display: grid; 
   gap: 30px;
+
+  @media (max-width: 375px){
+    max-width: 200px;
+    height: 80vh;
+    gap: 20px;
+    padding: 20px;
+   }
 `
 
 export const StyledConfirmText = styled.div`
@@ -36,6 +43,18 @@ export const StyledConfirmText = styled.div`
     color: hsl(7, 20%, 60%);
     font-weight: normal;
   }
+
+  @media (max-width: 375px){
+    gap: 8px;
+    h1 {
+      width: 100px;
+      font-size: 20px;
+    }
+  
+    h4 {
+      font-size: 10px;
+    }
+   }
 `
 
 export const StyledCart = styled.div`
@@ -49,6 +68,11 @@ export const StyledCart = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: 375px){
+   max-width: 180px;
+   padding: 10px;
+  }
 `
 
 export const StyledItemDescription = styled.div`
@@ -56,6 +80,16 @@ export const StyledItemDescription = styled.div`
   gap: 20px;
   border-bottom: 1px solid hsl(14, 25%, 72%);
   padding: 20px;
+
+  @media (max-width: 375px){
+    gap: 5px;
+    padding: 5px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+   }
 `
 
 export const StyledConfirmedItem = styled.div`
@@ -67,4 +101,12 @@ export const StyledConfirmedItem = styled.div`
   h3 {
     margin: 5px;
   }
+
+  @media (max-width: 375px){
+    gap: 5px;
+    
+    h3 {
+      font-size: 8px;
+    }
+   }
 `

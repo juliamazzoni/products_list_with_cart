@@ -11,6 +11,12 @@ export const StyledProductsPage = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 40px;
+
+  @media (max-width: 375px){
+    grid-template-columns: 1fr;
+    max-width: 375px;
+    margin: 25px;
+  }
 `
 
 export const  StyledProductsListContainer = styled.div`
@@ -20,26 +26,42 @@ export const  StyledProductsListContainer = styled.div`
 export const StyledTitle = styled.h1`
  font-size: 40px;
  margin: 30px 0;
+
+ @media (max-width: 375px){
+  font-size: 30px;
+ }
 `
+
 export const StyledProductsList = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+
+  @media (max-width: 375px){
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 `
 
 export const StyledItem = styled.div`
   display: grid;
   gap: 10px;
+
+  @media (max-width: 375px){
+    gap: 1px;
+  }
 `
 
 export const StyledImage = styled.div<variantProps>`
-img {
-  border-radius: 20px;
-  width: 100%;
-  border: ${({ variant }) => {
-    if (variant === 'primary') return '2px solid #fff';
-    if (variant === 'secondary') return '2px solid hsl(14, 86%, 42%)'
-  }
+  img {
+    border-radius: 20px;
+    width: 100%;
+    border: ${({ variant }) => {
+      if (variant === 'primary') return '2px solid #fff';
+      if (variant === 'secondary') return '2px solid hsl(14, 86%, 42%)';
+      return 'none'
+    }
+  };
 }
 `
 
@@ -57,6 +79,16 @@ export const StyledText = styled.div`
 
   h2:nth-of-type(2) {
     color: hsl(14, 86%, 42%);
+  }
+
+  @media (max-width: 375px){
+    h3 {
+      font-size: 12px;
+    }
+  
+    h2 {
+      font-size: 14px;
+    }
   }
 `
 
@@ -115,12 +147,23 @@ export const StyledButton = styled.button<variantProps>`
       color: hsl(14, 86%, 42%);
       border-color: hsl(14, 86%, 42%);
     }
+
+    @media (max-width: 375px){
+      font-size: 10px;
+      width: 130px;
+      padding: 6px;
+      margin: -18px auto 10px;
+    }
 `
 
 export const StyledRedText = styled.h1`
     color: hsl(14, 86%, 42%);
     font-size: 30px;
     margin: 0;
+
+    @media (max-width: 375px){
+      font-size: 20px;
+    }
 `
 
 export const StyledCartContainer = styled.div`
@@ -128,6 +171,10 @@ export const StyledCartContainer = styled.div`
     align-self: flex-start;
     padding: 40px;
     border-radius: 30px;
+
+    @media (max-width: 375px){
+      padding: 20px;
+    }
 `
 
 export const StyledEmptyCart = styled.div`
@@ -142,6 +189,16 @@ export const StyledEmptyCart = styled.div`
       color: hsl(12, 20%, 44%);
       margin: 0;
     }
+
+    @media (max-width: 375px){
+      h4 {
+       font-size: 8px;
+      }
+
+      img {
+        padding: 10px;
+      }
+    }
 `
 
 export const StyledCartItem = styled.div`
@@ -155,6 +212,19 @@ export const StyledCartItem = styled.div`
       border: 2px solid hsl(14, 25%, 72%);
       border-radius: 50%;
       padding: 2px;
+    }
+
+    @media (max-width: 375px){
+
+      img {
+        padding: 1px;
+        width: 12px;
+        height: 12px;
+      }
+
+      h3 {
+        font-size: 14px;
+      }
     }
 `
 
@@ -173,6 +243,14 @@ export const StyledPriceInfo = styled.div`
     h3:nth-of-type(2) {
       font-weight: normal;
     }
+
+    @media (max-width: 375px){
+      gap: 10px;
+
+      h3 {
+        margin: 0;
+      }
+    }
 `
 
 export const StyledOrderTotal = styled.div`
@@ -182,6 +260,16 @@ export const StyledOrderTotal = styled.div`
 
     h3 {
       font-weight: normal;
+    }
+
+    @media (max-width: 375px){
+      padding: 10px 0;
+      h3 {
+        font-size: 14px
+      }
+      h1 {
+        font-size: 20px
+      }
     }
     `
 
@@ -201,6 +289,19 @@ export const StyledCarbonNeutralMessage = styled.div`
     span {
       font-weight: bold;
     }
+
+    @media (max-width: 375px){
+      gap: 6px;
+      padding: 8px 15px;
+      img {
+        width: 20px;
+      }
+
+      h3 {
+       font-size: 12px;
+      }
+    }
+
 `
 
 export const StyledRedButton = styled.button`
@@ -222,6 +323,15 @@ export const StyledRedButton = styled.button`
     &:active {
       cursor: pointer;
       background-color: rgb(158 49 16);
+    }
+
+    @media (max-width: 375px){
+      margin-top: 25px;
+      h3 {
+        font-size: 14px;
+        margin: 10px;
+      }
+      
     }
 
 `
