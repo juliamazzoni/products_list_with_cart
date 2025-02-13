@@ -65,7 +65,7 @@ export const StyledCart = styled.div`
   border-radius: 10px;
   padding: 10px;
   max-width: 180px;
-  max-height: 600px;
+  max-height: 150px;
   overflow: auto;
 
   &::-webkit-scrollbar {
@@ -75,7 +75,7 @@ export const StyledCart = styled.div`
   @media (min-width: 1200px){
     min-width: 600px;
     padding: 20px;
-    
+    max-height: 300px;
   }
 `
 
