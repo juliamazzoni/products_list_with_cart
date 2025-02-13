@@ -10,49 +10,52 @@ export const StyledConfirmationModalOverlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
 `
 
 export const StyledModal = styled.div`
   background-color: #fff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 15px;
   display: grid; 
-  gap: 30px;
+  gap: 10px;
+  max-height: 60%;
+  min-width: 200px;
 
-  @media (max-width: 375px){
-    max-width: 200px;
-    height: 80vh;
-    gap: 20px;
-    padding: 20px;
+  @media (min-width: 1200px){
+    gap: 30px;
+    padding: 30px;
+    height: auto;
    }
 `
 
 export const StyledConfirmText = styled.div`
   display: grid; 
-  gap: 12px;
+  gap: 8px;
+  
   h1, h4 {
     margin: 0;
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 20px;
+    width: 100px;
   }
 
   h4 {
     color: hsl(7, 20%, 60%);
     font-weight: normal;
+    font-size: 10px;
   }
 
-  @media (max-width: 375px){
-    gap: 8px;
+  @media (min-width: 1200px){
+    gap: 12px;
+
     h1 {
-      width: 100px;
-      font-size: 20px;
+      font-size: 40px;
     }
   
     h4 {
-      font-size: 10px;
+      font-size: 20px;
     }
    }
 `
@@ -60,35 +63,43 @@ export const StyledConfirmText = styled.div`
 export const StyledCart = styled.div`
   background-color: hsl(13, 31%, 94%);
   border-radius: 10px;
-  padding: 20px;
-  width: 600px;
-  max-height: 500px;
+  padding: 10px;
+  max-width: 180px;
+  max-height: 600px;
   overflow: auto;
 
   &::-webkit-scrollbar {
     display: none;
   }
 
-  @media (max-width: 375px){
-   max-width: 180px;
-   padding: 10px;
+  @media (min-width: 1200px){
+    min-width: 600px;
+    padding: 20px;
+    
   }
 `
 
 export const StyledItemDescription = styled.div`
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
   border-bottom: 1px solid hsl(14, 25%, 72%);
-  padding: 20px;
+  
+  img {
+    width: 40px;
+    height: 40px;
+  }
 
-  @media (max-width: 375px){
-    gap: 5px;
-    padding: 5px;
+  @media (min-width: 1200px){
+    gap: 20px;
+    padding: 20px;
 
     img {
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
     }
+   
    }
 `
 
@@ -97,16 +108,19 @@ export const StyledConfirmedItem = styled.div`
   align-items: center;
   width: 100%;
   justify-content: space-between;
+  gap: 5px;
 
   h3 {
     margin: 5px;
+    font-size: 8px;
   }
 
-  @media (max-width: 375px){
-    gap: 5px;
+  @media (min-width: 1200px){
     
+    gap: 10px;
+
     h3 {
-      font-size: 8px;
+      font-size: 16px;
     }
    }
 `
