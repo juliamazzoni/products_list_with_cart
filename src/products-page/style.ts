@@ -154,6 +154,12 @@ export const StyledButton = styled.button<variantProps>`
       border-color: hsl(14, 86%, 42%);
     }
 
+    @media (min-width: 360px){
+      width: 60%;
+      padding: 10px 8px;
+      margin: -30px auto 10px;
+    }
+
     @media (min-width: 1200px){
       font-size: 16px;
       width: 80%;
@@ -357,6 +363,7 @@ export const StyledRedButton = styled.button`
     }
 
     @media (min-width: 1200px){
+      padding: 8px;
       h3 {
         font-size: 20px;
       }
