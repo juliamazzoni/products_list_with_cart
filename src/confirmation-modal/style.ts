@@ -18,13 +18,13 @@ export const StyledModal = styled.div`
   border-radius: 15px;
   display: grid; 
   gap: 10px;
-  max-height: 60%;
+  max-height: 70%;
   min-width: 200px;
 
-  @media (min-width: 1200px){
-    gap: 30px;
-    padding: 30px;
-    height: auto;
+  @media (min-width: 1100px){
+    gap: 15px;
+    padding: 40px;
+    max-width: 400px;
    }
 `
 
@@ -47,15 +47,15 @@ export const StyledConfirmText = styled.div`
     font-size: 10px;
   }
 
-  @media (min-width: 1200px){
+  @media (min-width: 1100px){
     gap: 12px;
 
     h1 {
-      font-size: 40px;
+      font-size: 25px;
     }
   
     h4 {
-      font-size: 20px;
+      font-size: 15px;
     }
    }
 `
@@ -72,10 +72,10 @@ export const StyledCart = styled.div`
     display: none;
   }
 
-  @media (min-width: 1200px){
-    min-width: 600px;
+  @media (min-width: 1100px){
+    max-width: 350px;
     padding: 20px;
-    max-height: 300px;
+    max-height: auto;
   }
 `
 
@@ -91,7 +91,7 @@ export const StyledItemDescription = styled.div`
     height: 40px;
   }
 
-  @media (min-width: 1200px){
+  @media (min-width: 1100px){
     gap: 20px;
     padding: 20px;
 
@@ -115,7 +115,7 @@ export const StyledConfirmedItem = styled.div`
     font-size: 8px;
   }
 
-  @media (min-width: 1200px){
+  @media (min-width: 1100px){
     
     gap: 10px;
 

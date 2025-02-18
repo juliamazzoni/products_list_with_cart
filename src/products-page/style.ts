@@ -11,7 +11,7 @@ export const StyledProductsPage = styled.div`
   grid-template-columns: 1fr;
   gap: 40px;
 
-  @media (min-width: 1200px){
+  @media (min-width: 1100px){
     grid-template-columns: 2fr 1fr;
     max-width: 1440px;
     margin: 50px 100px;
@@ -29,7 +29,7 @@ export const StyledTitle = styled.h1`
   font-size: 30px;
   margin: 30px 0;
 
- @media (min-width: 1200px){
+ @media (min-width: 1100px){
   font-size: 40px;
  }
 `
@@ -39,7 +39,7 @@ export const StyledProductsList = styled.div`
   grid-template-columns: 1fr;
   gap: 10px;
   
-  @media (min-width: 1200px){
+  @media (min-width: 1100px){
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
@@ -50,7 +50,7 @@ export const StyledItem = styled.div`
   gap: 1px;
   
 
-  @media (min-width: 1200px){
+  @media (min-width: 1300px){
     gap: 10px;
   }
 `
@@ -86,15 +86,6 @@ export const StyledText = styled.div`
     color: hsl(14, 86%, 42%);
   }
 
-  @media (min-width: 1200px){
-    h3 {
-      font-size: 14px;
-    }
-  
-    h2 {
-      font-size: 16px;
-    }
-  }
 `
 
 export const StyledButton = styled.button<variantProps>`
@@ -160,8 +151,7 @@ export const StyledButton = styled.button<variantProps>`
       margin: -30px auto 10px;
     }
 
-    @media (min-width: 1200px){
-      font-size: 16px;
+    @media (min-width: 1100px){
       width: 80%;
       padding: 12px;
       margin: -35px auto 10px;
@@ -174,7 +164,7 @@ export const StyledRedText = styled.h1`
     font-size: 20px;
     margin: 0;
 
-    @media (min-width: 1200px){
+    @media (min-width: 1100px){
       font-size: 30px;
     }
 `
@@ -185,7 +175,7 @@ export const StyledCartContainer = styled.div`
     padding: 20px;
     border-radius: 30px;
 
-    @media (min-width: 1200px){
+    @media (min-width: 1100px){
       padding: 40px;
       min-width: 200px;
     }
@@ -205,7 +195,7 @@ export const StyledEmptyCart = styled.div`
       margin: 0;
     }
 
-    @media (min-width: 1200px){
+    @media (min-width: 1100px){
       h4 {
         font-size: 12px;
       }
@@ -235,7 +225,7 @@ export const StyledCartItem = styled.div`
       font-size: 14px;
     }
 
-    @media (min-width: 1200px){
+    @media (min-width: 1100px){
 
       img {
         padding: 2px;
@@ -266,7 +256,7 @@ export const StyledPriceInfo = styled.div`
       font-weight: normal;
     }
 
-    @media (min-width: 1200px){
+    @media (min-width: 1100px){
       gap: 15px;
 
       h3 {
@@ -290,7 +280,7 @@ export const StyledOrderTotal = styled.div`
       font-size: 20px;
     }
 
-    @media (min-width: 1200px){
+    @media (min-width: 1100px){
       
       h3 {
         font-size: 16px;
@@ -326,7 +316,7 @@ export const StyledCarbonNeutralMessage = styled.div`
       width: 18px;
     }
 
-    @media (min-width: 1200px){
+    @media (min-width: 1100px){
       padding: 6px 12px;
 
       img {
@@ -362,10 +352,9 @@ export const StyledRedButton = styled.button`
       background-color: rgb(158 49 16);
     }
 
-    @media (min-width: 1200px){
-      padding: 8px;
+    @media (min-width: 1100px){
       h3 {
-        font-size: 20px;
+        font-size: 16px;
       }
       
     }

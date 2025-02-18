@@ -23,7 +23,9 @@ export const ConfirmationModal = ({ cart, setCart, setProductsList, productsList
           <h4>We hope you enjoy your food!</h4>
         </StyledConfirmText>
         <StyledCart>
-          {cart.map((cartItem, index) => {
+          {cart
+          .filter(cartItem => (cartItem.count ?? 0) > 0)
+          .map((cartItem, index) => {
             const name = cartItem.name
             const count = cartItem.count 
             const price = (cartItem.price).toFixed(2)
